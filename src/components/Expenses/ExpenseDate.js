@@ -2,7 +2,7 @@ import "./ExpenseDate.css";
 const ExpenseDate = (props) => {
 	const year = props.date.getFullYear();
 	const month = props.date.getMonth().toString().padStart(2,"0");
-  console.log(typeof month.toString());
+  
 	const day = props.date.toLocaleString("ko-KR", { day: "2-digit" });
 	return (
 		<div className="expense-date">
