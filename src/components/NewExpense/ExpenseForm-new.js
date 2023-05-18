@@ -5,13 +5,7 @@ const ExpenseForm = () => {
 
 	const [userInput, setUserInput] = useState({ inputTitle: '', inputNum: '', inputDate: '' });
 
-	//const [inputTitle, setInputTitle] = useState('');
-	//const [inputNum, setInputNum] = useState('');
-	//const [inputDate, setInputDate] = useState('');
-
 	const titleChangeFn = (e) => {
-		//setUserInput({ ...userInput, inputTitle: e.target.value })
-		//console.log({ ...userInput })
 		setUserInput((prev) => {
 			console.log("titleChangeFn", userInput);
 			return ({ ...prev, inputTitle: e.target.value });
@@ -25,10 +19,15 @@ const ExpenseForm = () => {
 		console.log('dateChangeFn', userInput);
 		setUserInput((prev) => { return ({ ...prev, inputDate: e.target.value }) });
 	}
+	const submitFn = (e) => {
+		e.preventDefault();
+		console.log(userInput);
+		setUserInput({ inputTitle: '', inputNum: '', inputDate: "" })
+	}
 	return (
 		<div>
 			<h1>지출내역입력</h1>
-			<form>
+			<form onSubmit={submitFn}>
 				<div className="new-expense__controls">
 					<div className="new-expense__control">
 						<label>제목</label>
