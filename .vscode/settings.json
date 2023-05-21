@@ -3,5 +3,6 @@
   "prettier.bracketSameLine": true,
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": false,
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": false,
-  "prettier.printWidth": 300
+  "prettier.printWidth": 300,
+  "editor.autoClosingBrackets": "always"
 }
