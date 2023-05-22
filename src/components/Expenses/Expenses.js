@@ -16,7 +16,7 @@ const Expenses = ({ items }) => {
   return (
     <Card className="expenses">
       <ExpensesFilter selected={filteredYear} onChangeYear={changeYearFn} />
-      <ExpenseChart />
+      <ExpenseChart items={filterYearFn}/>
       <ExpenseList items={filterYearFn} />
     </Card>
   )
