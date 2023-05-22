@@ -18,12 +18,11 @@ const ExpenseForm = (props) => {
 	}
 	const submitFn = (e) => {
 		e.preventDefault();
-		const expenseData = { title: inputTitle, num: inputNum, date: inputDate };
+		const expenseData = { title: inputTitle, amount: inputNum, date: new Date(inputDate) };
 		setInputTitle('');
 		setInputNum('');
 		setInputDate('');
 		props.onSaveExpense(expenseData);
-		console.log(props.onSaveExpense);
 	}
 	return (
 		<div>
@@ -45,6 +44,7 @@ const ExpenseForm = (props) => {
 				</div>
 				<div className="new-expense__action">
 					<button type="submit">등록하기</button>
+					<button type="button" onClick={props.onCancel}>취소하기</button>
 				</div>
 			</form>
 		</div>

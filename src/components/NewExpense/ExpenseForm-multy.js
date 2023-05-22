@@ -21,7 +21,7 @@ const ExpenseForm = () => {
 	}
 	const submitFn = (e) => {
 		e.preventDefault();
-		console.log(userInput);
+
 		setUserInput({ inputTitle: '', inputNum: '', inputDate: "" })
 	}
 	return (
@@ -31,15 +31,15 @@ const ExpenseForm = () => {
 				<div className="new-expense__controls">
 					<div className="new-expense__control">
 						<label>제목</label>
-						<input type="text" onChange={titleChangeFn} />
+						<input type="text" onChange={titleChangeFn} value={userInput.inputTitle} />
 					</div>
 					<div className="new-expense__control">
 						<label>금액</label>
-						<input type="number" min="0" step="100" onChange={numChangeFn} />
+						<input type="number" min="0" step="100" onChange={numChangeFn} value={userInput.inputNum} />
 					</div>
 					<div className="new-expense__control">
 						<label>날짜</label>
-						<input type="date" min="1999-01-01" max="2030-12-31" onChange={dateChangeFn} />
+						<input type="date" min="1999-01-01" max="2030-12-31" onChange={dateChangeFn} value={userInput.inputDate} />
 					</div>
 				</div>
 				<div className="new-expense__action">

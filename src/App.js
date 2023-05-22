@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
-import Accordion from "./components/Accordion";
 
 const INIT_DATA = [
   { id: 'e1', title: '화장지', amount: 9100, date: new Date(2019, 7, 14) },
@@ -11,11 +10,13 @@ const INIT_DATA = [
 ]
 
 function App() {
-  const [expenseList,setExpenseList]=useState(INIT_DATA);
+  const [expenseList, setExpenseList] = useState(INIT_DATA);
 
   const addExpenseFn = (data) => {
     console.log("App 🎃🎃", data);
-    setExpenseList(()=>{});
+    setExpenseList((prev) => {
+      return [data, ...prev]
+    });
   }
 
   return (
